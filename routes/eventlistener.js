@@ -1,16 +1,16 @@
 var express = require('express');
 const ethers = require("ethers");
 const erc20abi = require("./../abi/erc20.json");
-const refmintSDK = require("refmint-sdk")
+// const refmintSDK = require("refmint-sdk")
 require('dotenv').config();
 
 var router = express.Router();
 
 // Set RefMint SDK
-const refmintClient = new refmintSDK.default.Game({
-	apiKey: process.env.DEVELOPER_API_KEY,
-	baseUrl: refmintSDK.BaseURLOptions.TESTNET
-});
+// const refmintClient = new refmintSDK.default.Game({
+// 	apiKey: process.env.DEVELOPER_API_KEY,
+// 	baseUrl: refmintSDK.BaseURLOptions.TESTNET
+// });
 
 // The URL should be your Infura or Alchemy Websocket URL
 // example: wss://eth-goerli.g.alchemy.com/v2/<API_KEY>
@@ -47,17 +47,6 @@ contract.on(transferEventFilter, async (args) => {
   // ]
   let wallet_address = args.args[0];
   console.log(`From: ${wallet_address}`);
-
-  refmintClient.click(
-    process.env.PROJECT_ID,
-    process.env.CAMPAIGN_ID,
-    process.env.LINK_ID
-  ).then((resp) => {
-    //do something...
-    console.log("Clicked")
-  }).catch(e => {
-    console.log(e);
-  });
 
   // You can use the RefMint SDK, or call the RefMint Rest API
   // RefMint SDK (https://docs.refmint.xyz/refmint-sdk/sdk) 

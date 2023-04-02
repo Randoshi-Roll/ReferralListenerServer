@@ -54,3 +54,10 @@ When you no longer need this sample application running live, you can delete it 
 3. In the **Settings** tab, click **Destroy**.
 
 **Note: If you do not delete your app, charges for using DigitalOcean services will continue to accrue.**
+
+# RefMint Changes
+In the App Settings, Add the following environment variables:
+`WSS_URL` - The WebSocket URL you can get from Alchemy or Infura
+`DEVELOPER_API_KEY` - You can get this from the RefMint App (test.refmint.xyz or app.refmint.xyz), in your profile settings
+`PROJECT_ID` - The Project ID (Custom URL) in your game's info in the Refmint App
+`CAMPAIGN_ID` - The Campaign ID (campaign url) in your campaign info in the Refmint App
