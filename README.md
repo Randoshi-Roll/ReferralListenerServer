@@ -61,3 +61,6 @@ In the App Settings, Add the following environment variables:
 `DEVELOPER_API_KEY` - You can get this from the RefMint App (test.refmint.xyz or app.refmint.xyz), in your profile settings
 `PROJECT_ID` - The Project ID (Custom URL) in your game's info in the Refmint App
 `CAMPAIGN_ID` - The Campaign ID (campaign url) in your campaign info in the Refmint App
+`MONGODB_URI` - The Mongo DB Connection URI 
+`INIT_BLOCK` - The first block number to start processing transactions from
+`START_FROM_LATEST_BLOCK` - Skip all previous blocks and only start processing transactions from the latest block
