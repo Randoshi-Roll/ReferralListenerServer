@@ -61,3 +61,16 @@ In the App Settings, Add the following environment variables:
 `DEVELOPER_API_KEY` - You can get this from the RefMint App (test.refmint.xyz or app.refmint.xyz), in your profile settings
 `PROJECT_ID` - The Project ID (Custom URL) in your game's info in the Refmint App
 `CAMPAIGN_ID` - The Campaign ID (campaign url) in your campaign info in the Refmint App
+`MONGODB_URI` - The Mongo DB Connection URI 
+`INIT_BLOCK` - The first block number to start processing transactions from
+`START_FROM_LATEST_BLOCK` - Skip all previous blocks and only start processing transactions from the latest block
+
+## RefMint
+You can head to https://app.refmint.xyz or https://test.refmint.xyz to create a RefMint project. You can get the developer api key, project id, and campaign id from the project page and user settings page. 
+
+## RPC Provider
+You need an RPC provider to listen for on-chain events. You can head over to [Infura](https://www.infura.io/), [Alchemy](https://www.alchemy.com/), or [Ankr](https://www.ankr.com/rpc/). Make sure to grab the websocket (WSS) RPC endpoint.
+
+## MongoDB
+We use a mongodb database to store some information like the last processed block. You are free to use any db you want to.
+You can head over to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register) for a free MongoDB Atlas account.

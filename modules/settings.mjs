@@ -1,3 +1,4 @@
+
 import db from "../db/connect.mjs";
 import { ObjectId } from "mongodb";
 
@@ -10,7 +11,7 @@ export async function loadSettings() {
 
   if (!settings) {
     settings = {
-      lastBlockProcessed: 0
+      lastBlockProcessed: process.env.INIT_BLOCK ? parseInt(process.env.INIT_BLOCK) : 0
     };
 
     let result = await collection.insertOne(settings);
