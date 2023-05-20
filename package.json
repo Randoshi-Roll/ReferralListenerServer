@@ -21,7 +21,7 @@
     "mongodb": "^5.3.0",
     "morgan": "~1.9.1",
     "pug": "^2.0.4",
-    "refmint-sdk": "^1.2.0",
+    "refmint-sdk": "^1.2.2",
     "uglify-js": "^2.6.0"
   },
   "type": "module"

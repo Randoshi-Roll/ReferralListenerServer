@@ -809,10 +809,10 @@ raw-body@2.3.3:
     iconv-lite "0.4.23"
     unpipe "1.0.0"
 
-refmint-sdk@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/refmint-sdk/-/refmint-sdk-1.2.0.tgz#1d64c7fd7b42b0936b9d053bbe07b117edd02ca2"
-  integrity sha512-WcuME9NTWVo9zOXaYBoQlU3zzinxRc+8DYnU8fIKk3Gt6CGQx4cnvZ7AypWkbbGVEbDtVHeLW/RlrUnOyb/SIg==
+refmint-sdk@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/refmint-sdk/-/refmint-sdk-1.2.2.tgz#7abe6e002fc710a921000617d4814518be95bf50"
+  integrity sha512-dpByu+vvvaYkZVWk5264s28LkWdygG9VLJ3ItprzM3augI9CFoy4iGVGVhV5S3Tgxj8a2K9Gkm4pKGsCHaxtZg==
   dependencies:
     axios "^0.27.2"
 
