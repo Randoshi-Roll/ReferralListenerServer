@@ -118,6 +118,12 @@ export default [
         name: "joinedPlayer",
         type: "address",
       },
+      {
+        indexed: false,
+        internalType: "string",
+        name: "affiliateLinkId",
+        type: "string",
+      },
     ],
     name: "PlayerJoined",
     type: "event",
@@ -342,7 +348,10 @@ export default [
     type: "function",
   },
   {
-    inputs: [{ internalType: "uint256", name: "_roomSize", type: "uint256" }],
+    inputs: [
+      { internalType: "uint256", name: "_roomSize", type: "uint256" },
+      { internalType: "string", name: "affiliateLinkId", type: "string" },
+    ],
     name: "placeBet",
     outputs: [],
     stateMutability: "payable",

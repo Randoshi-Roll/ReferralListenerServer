@@ -2,10 +2,11 @@ import Refmint, { BaseURLOptions } from "refmint-sdk";
 
 /**
  * Trigger Refmint Event
+ * @param {string} link_id ref
  * @param {string} player player joined address
  * @param {BigInt} betSize amout of the bet
  */
-export async function triggerEvent(player, betSize) {
+export async function triggerEvent(link_id, player, betSize) {
   return new Promise((res, rej) => {
     // // Set RefMint SDK
     const refmintClient = new Refmint.default.Game({
@@ -16,6 +17,21 @@ export async function triggerEvent(player, betSize) {
     console.log(
       `Start processing Transaction From: ${player} amout ${betSize}`
     );
+
+    if (link_id)
+      // association
+      refmintClient.addUsers(
+        process.env.PROJECT_ID,
+        process.env.CAMPAIGN_ID,
+        [
+          {
+            wallet_address: player,
+            score: 0, // not matter
+            referral: 0, // not matter
+          },
+        ],
+        link_id
+      );
 
     // // You can use the RefMint SDK, or call the RefMint Rest API
     // // RefMint SDK (https://docs.refmint.xyz/refmint-sdk/sdk)

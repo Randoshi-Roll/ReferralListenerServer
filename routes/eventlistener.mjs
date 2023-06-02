@@ -32,10 +32,11 @@ if (process.env.START_FROM_LATEST_BLOCK === "false") {
   // Note: Some chains (like Polygon) only have limited history that you can query from RPCs like Infura
   // or Alchemy. They only allow you to look at history of the last 1000-5000 blocks. If it's too big, contract.
   // queryFilter() will fail.
-  let latestBlock = await provider.provider.getBlockNumber();
+
+  /*   let latestBlock = await provider.provider.getBlockNumber();
   if (latestBlock - 2000 > nextBlockToProcess) {
     nextBlockToProcess = latestBlock - 2000;
-  }
+  } */
 
   console.log(`Processing from block ${nextBlockToProcess}`);
 
@@ -52,13 +53,15 @@ if (process.env.START_FROM_LATEST_BLOCK === "false") {
        *    roomId,
        *    betSize,
        *    roomSize,
-       *    player
+       *    player,
+       *    affiliateLinkId
        * ]
        */
 
       const betSize = event.args[1];
       const player = event.args[3];
-      await triggerEvent(player, betSize);
+      const affiliateLinkId = event.args[4];
+      await triggerEvent(affiliateLinkId, player, betSize);
     }
 
     // Set the last processed block
@@ -73,16 +76,18 @@ contract.on(playerJoinedEventFilter, async (args) => {
    *    roomId,
    *    betSize,
    *    roomSize,
-   *    player
+   *    player,
+   *    affiliateLinkId
    * ]
    */
   const betSize = args.args[1];
   const player = args.args[3];
+  const affiliateLinkId = args.args[4];
 
   // Process the event here, however you want to massage the event
 
   // Forward the event using the RefMint SDK
-  await triggerEvent(player, betSize);
+  await triggerEvent(affiliateLinkId, player, betSize);
 
   // Set the last processed block
   settings.lastBlockProcessed = args.log.blockNumber;
