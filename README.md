@@ -1,16 +1,6 @@
 # Responsability
+
 ![image](https://github.com/Randoshi-Roll/ReferralListenerServer/assets/33315640/11878ca2-443f-4a62-91a0-61d7331be0c8)
-
-
-## Getting Started
-
-We provide a sample app using Node.js that you can deploy on App Platform. These steps will get this sample application running for you using App Platform.
-
-**Note: Following these steps may result in charges for the use of DigitalOcean services.**
-
-### Requirements
-
-* You need a DigitalOcean account. If you don't already have one, you can sign up at https://cloud.digitalocean.com/registrations/new.
 
 ## Deploying the App
 
@@ -53,6 +43,7 @@ You can learn more about the App Platform and how to manage and update your appl
 ## Deleting the App
 
 When you no longer need this sample application running live, you can delete it by following these steps:
+
 1. Visit the Apps control panel at https://cloud.digitalocean.com/apps.
 2. Navigate to the sample app.
 3. In the **Settings** tab, click **Destroy**.
@@ -60,21 +51,25 @@ When you no longer need this sample application running live, you can delete it 
 **Note: If you do not delete your app, charges for using DigitalOcean services will continue to accrue.**
 
 # RefMint Changes
+
 In the App Settings, Add the following environment variables:
 `WSS_URL` - The WebSocket URL you can get from Alchemy or Infura
 `DEVELOPER_API_KEY` - You can get this from the RefMint App (test.refmint.xyz or app.refmint.xyz), in your profile settings
 `PROJECT_ID` - The Project ID (Custom URL) in your game's info in the Refmint App
 `CAMPAIGN_ID` - The Campaign ID (campaign url) in your campaign info in the Refmint App
-`MONGODB_URI` - The Mongo DB Connection URI 
+`MONGODB_URI` - The Mongo DB Connection URI
 `INIT_BLOCK` - The first block number to start processing transactions from
 `START_FROM_LATEST_BLOCK` - Skip all previous blocks and only start processing transactions from the latest block
 
 ## RefMint
-You can head to https://app.refmint.xyz or https://test.refmint.xyz to create a RefMint project. You can get the developer api key, project id, and campaign id from the project page and user settings page. 
+
+You can head to https://app.refmint.xyz or https://test.refmint.xyz to create a RefMint project. You can get the developer api key, project id, and campaign id from the project page and user settings page.
 
 ## RPC Provider
+
 You need an RPC provider to listen for on-chain events. You can head over to [Infura](https://www.infura.io/), [Alchemy](https://www.alchemy.com/), or [Ankr](https://www.ankr.com/rpc/). Make sure to grab the websocket (WSS) RPC endpoint.
 
 ## MongoDB
+
 We use a mongodb database to store some information like the last processed block. You are free to use any db you want to.
 You can head over to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register) for a free MongoDB Atlas account.

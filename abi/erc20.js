@@ -1,286 +1,430 @@
-export default
-  [
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "owner",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "spender",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "value",
-          "type": "uint256"
-        }
-      ],
-      "name": "Approval",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "internalType": "uint8",
-          "name": "version",
-          "type": "uint8"
-        }
-      ],
-      "name": "Initialized",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "from",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "to",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "value",
-          "type": "uint256"
-        }
-      ],
-      "name": "Transfer",
-      "type": "event"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "owner",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "spender",
-          "type": "address"
-        }
-      ],
-      "name": "allowance",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "spender",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "approve",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        }
-      ],
-      "name": "balanceOf",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "decimals",
-      "outputs": [
-        {
-          "internalType": "uint8",
-          "name": "",
-          "type": "uint8"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "spender",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "subtractedValue",
-          "type": "uint256"
-        }
-      ],
-      "name": "decreaseAllowance",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "spender",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "addedValue",
-          "type": "uint256"
-        }
-      ],
-      "name": "increaseAllowance",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "name",
-      "outputs": [
-        {
-          "internalType": "string",
-          "name": "",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "symbol",
-      "outputs": [
-        {
-          "internalType": "string",
-          "name": "",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "totalSupply",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "to",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "transfer",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "from",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "to",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "transferFrom",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    }
-  ]
+export default [
+  {
+    inputs: [
+      { internalType: "address", name: "vrfCoordinatorV2", type: "address" },
+      { internalType: "uint64", name: "subscriptionId", type: "uint64" },
+      { internalType: "bytes32", name: "keyHash", type: "bytes32" },
+      {
+        internalType: "uint256",
+        name: "intervalFromLastRequestOfRandomWords",
+        type: "uint256",
+      },
+      {
+        internalType: "uint32",
+        name: "requestRandomWordsCallbackGasLimit",
+        type: "uint32",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
+    inputs: [
+      { internalType: "address", name: "have", type: "address" },
+      { internalType: "address", name: "want", type: "address" },
+    ],
+    name: "OnlyCoordinatorCanFulfill",
+    type: "error",
+  },
+  { inputs: [], name: "SimpleGame__BetAmoutNotAllowed", type: "error" },
+  {
+    inputs: [
+      { internalType: "uint256", name: "amoutAvaliable", type: "uint256" },
+    ],
+    name: "SimpleGame__ContractAmoutIsLess",
+    type: "error",
+  },
+  {
+    inputs: [{ internalType: "uint256", name: "gameId", type: "uint256" }],
+    name: "SimpleGame__GameIdNotFound",
+    type: "error",
+  },
+  { inputs: [], name: "SimpleGame__GameIsInPause", type: "error" },
+  {
+    inputs: [{ internalType: "uint256", name: "gameId", type: "uint256" }],
+    name: "SimpleGame__GameWasNotPlayed",
+    type: "error",
+  },
+  { inputs: [], name: "SimpleGame__NoGamesToPlay", type: "error" },
+  { inputs: [], name: "SimpleGame__NoRandomWords", type: "error" },
+  { inputs: [], name: "SimpleGame__NotOwner", type: "error" },
+  { inputs: [], name: "SimpleGame__RoomSizeNotAllowed", type: "error" },
+  { inputs: [], name: "SimpleGame__TransferFailed", type: "error" },
+  {
+    anonymous: false,
+    inputs: [
+      { indexed: true, internalType: "uint256", name: "id", type: "uint256" },
+      {
+        indexed: true,
+        internalType: "uint256",
+        name: "amoutWin",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "roomSize",
+        type: "uint256",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "winner",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "address[]",
+        name: "players",
+        type: "address[]",
+      },
+    ],
+    name: "GamePlayed",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      { indexed: true, internalType: "uint256", name: "id", type: "uint256" },
+      {
+        indexed: false,
+        internalType: "address[]",
+        name: "players",
+        type: "address[]",
+      },
+    ],
+    name: "GameReady",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      { indexed: true, internalType: "uint256", name: "id", type: "uint256" },
+      {
+        indexed: true,
+        internalType: "uint256",
+        name: "betSize",
+        type: "uint256",
+      },
+      {
+        indexed: true,
+        internalType: "uint256",
+        name: "roomSize",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "address",
+        name: "joinedPlayer",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "string",
+        name: "affiliateLinkId",
+        type: "string",
+      },
+    ],
+    name: "PlayerJoined",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "uint256",
+        name: "games",
+        type: "uint256",
+      },
+      { indexed: true, internalType: "uint256", name: "vrn", type: "uint256" },
+    ],
+    name: "ReFilled",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "requestId",
+        type: "uint256",
+      },
+    ],
+    name: "RequestRandomNumber",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      { indexed: false, internalType: "string", name: "msg", type: "string" },
+    ],
+    name: "Simplelog",
+    type: "event",
+  },
+  {
+    inputs: [{ internalType: "bytes", name: "", type: "bytes" }],
+    name: "checkUpkeep",
+    outputs: [
+      { internalType: "bool", name: "upkeepNeeded", type: "bool" },
+      { internalType: "bytes", name: "", type: "bytes" },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "donate",
+    outputs: [],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getBetOptions",
+    outputs: [{ internalType: "uint256[]", name: "", type: "uint256[]" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getContractOwner",
+    outputs: [{ internalType: "address", name: "", type: "address" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getContractTotalBalance",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "uint256", name: "gameId", type: "uint256" }],
+    name: "getGamePlayed",
+    outputs: [
+      {
+        components: [
+          { internalType: "address[]", name: "players", type: "address[]" },
+          { internalType: "uint256", name: "betForPlayer", type: "uint256" },
+          { internalType: "uint256", name: "amountWin", type: "uint256" },
+          { internalType: "address", name: "winner", type: "address" },
+        ],
+        internalType: "struct SimpleGame.GameHistory",
+        name: "gamePlayed",
+        type: "tuple",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getGamesLeft",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getIntervalFromLastRequestOfRandomWords",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getIsOpen",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getLastRoomId",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getLastTimeStampFromRequestRandmWords",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getRandomLeft",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getRequestRandomState",
+    outputs: [
+      {
+        internalType: "enum SimpleGame.RequestNumberState",
+        name: "",
+        type: "uint8",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "uint256", name: "roomId", type: "uint256" }],
+    name: "getRoomInfo",
+    outputs: [
+      {
+        components: [
+          {
+            internalType: "enum SimpleGame.RoomStatus",
+            name: "status",
+            type: "uint8",
+          },
+          { internalType: "address[]", name: "players", type: "address[]" },
+          { internalType: "uint256", name: "roomSize", type: "uint256" },
+          { internalType: "uint256", name: "betForPlayer", type: "uint256" },
+          { internalType: "uint256", name: "amountWin", type: "uint256" },
+          { internalType: "address", name: "winner", type: "address" },
+        ],
+        internalType: "struct SimpleGame.RoomInfo",
+        name: "roomInfo",
+        type: "tuple",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getRoomSizeOptions",
+    outputs: [{ internalType: "uint256[]", name: "", type: "uint256[]" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "bet", type: "uint256" },
+      { internalType: "uint256", name: "roomSize", type: "uint256" },
+    ],
+    name: "getRoomsLength",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getVersion",
+    outputs: [{ internalType: "string", name: "", type: "string" }],
+    stateMutability: "pure",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getWithdrawable",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "amoutToWithDraw", type: "uint256" },
+    ],
+    name: "hardWithdraw",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "bytes", name: "", type: "bytes" }],
+    name: "performUpkeep",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "_roomSize", type: "uint256" },
+      { internalType: "string", name: "affiliateLinkId", type: "string" },
+    ],
+    name: "placeBet",
+    outputs: [],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "play",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "pullThePlug",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "requestId", type: "uint256" },
+      { internalType: "uint256[]", name: "randomWords", type: "uint256[]" },
+    ],
+    name: "rawFulfillRandomWords",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "", type: "uint256" },
+      { internalType: "uint256", name: "", type: "uint256" },
+      { internalType: "uint256", name: "", type: "uint256" },
+    ],
+    name: "s_roomsOpened",
+    outputs: [{ internalType: "uint256", name: "id", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "uint32", name: "value", type: "uint32" }],
+    name: "setCallbackGasLimit",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "bool", name: "isOpen", type: "bool" }],
+    name: "setIsOpen",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "uint8", name: "maxGamesToPlay", type: "uint8" }],
+    name: "setMaxGamesToPlay",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "uint16", name: "value", type: "uint16" }],
+    name: "setNumberOfRandomWordsToRequest",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "withdraw",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+];
